@@ -1,10 +1,10 @@
 var express = require('express')
 
 var router = express.Router()
-var question = require('./api/template.route')
+var buzzWord = require('./api/buzzWord.route')
 
 
-router.use('/quiz', question);
+router.use('/buzzWord', buzzWord);
 
 
 module.exports = router;
