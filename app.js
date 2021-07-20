@@ -4,8 +4,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var api = require('./routes/api.route')
 
 var mongoose = require('mongoose')
@@ -13,11 +11,25 @@ var bluebird = require('bluebird')
 
 var app = express();
 
+// react on SIGINT (ctrl-c)
+process.on('SIGTERM', function() {
+  console.log('Do something useful here.');
+  app.close();
+  process.exit()
+});
+
+// react on SIGINT (ctrl-c)
+process.on('SIGINT', function() {
+  console.log('Do something useful here.');
+  app.close();
+  process.exit()
+});
+
 mongoose.Promise = bluebird
 //use respective url to mongodb server
-mongoose.connect('mongodb://127.0.0.1:27017/template', { useNewUrlParser: true })
-.then(()=> { console.log(`Succesfully Connected to the Mongodb Database  at URL : mongodb://127.0.0.1:27017/quiz`)})
-.catch(()=> { console.log(`Error Connecting to the Mongodb Database at URL : mongodb://127.0.0.1:27017/quiz`)})
+mongoose.connect('mongodb://127.0.0.1:27017/buzzWordBingo', { useNewUrlParser: true, useUnifiedTopology: true })
+.then(()=> { console.log(`Succesfully Connected to the Mongodb Database  at URL : mongodb://127.0.0.1:27017/buzzWordBingo`)})
+.catch(()=> { console.log(`Error Connecting to the Mongodb Database at URL : mongodb://127.0.0.1:27017/buzzWordBingo`)})
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*:*");
@@ -36,8 +48,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/api', api);
 
 // catch 404 and forward to error handler
