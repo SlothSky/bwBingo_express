@@ -1,29 +1,19 @@
-# README #
+# BW Bingo  Express Backend 
 
-This README would normally document whatever steps are necessary to get your application up and running.
+#### Currently implemented scripts
 
-### What is this repository for? ###
+* npm start → _nodemon ./bin/www_
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
-### How do I get set up? ###
+#### Currently implemented services
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* create buzzword `(POST)`
+* get buzzword `(GET)`
+* update buzzword `(PUT)`
+* remove buzzword `(DELETE)`
 
-### Contribution guidelines ###
+#### Connection MongoDB
 
-* Writing tests
-* Code review
-* Other guidelines
+The connection to MongoDB is currently done to **127.0.0.1:27017/buzzWordBingo.buzzWords**
 
-### Who do I talk to? ###
 
-* Repo owner or admin
-* Other community or team contact
