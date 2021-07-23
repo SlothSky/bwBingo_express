@@ -36,7 +36,6 @@ exports.getBuzzWord = async function(req, res)
 
 exports.createBuzzWord = async function(req, res)
 {
-
     // Req.Body contains the form submit values.
     let buzzWord = {
         name: req.body.names,
