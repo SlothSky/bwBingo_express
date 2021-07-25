@@ -12,16 +12,8 @@ var bluebird = require('bluebird')
 var app = express();
 
 // react on SIGINT (ctrl-c)
-process.on('SIGTERM', function() {
-  console.log('Do something useful here.');
-  app.close();
-  process.exit()
-});
-
-// react on SIGINT (ctrl-c)
 process.on('SIGINT', function() {
   console.log('Do something useful here.');
-  app.close();
   process.exit()
 });
 
