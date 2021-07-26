@@ -5,7 +5,7 @@ var mongoosePaginate = require('mongoose-paginate')
 let BuzzWordSchema = new mongoose.Schema({
     name: String,
     description: String,
-    mdb_id: Number,
+    mdbId: Number,
 })
 
 BuzzWordSchema.plugin(mongoosePaginate)

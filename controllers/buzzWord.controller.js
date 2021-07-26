@@ -40,7 +40,7 @@ exports.createBuzzWord = async function(req, res)
     let buzzWord = {
         name: req.body.name,
         description: req.body.description,
-        mdb_id: req.body.mdb_id
+        mdbId: req.body.mdbId
     }
 
     try
@@ -74,7 +74,7 @@ exports.updateTemplate = async function(req, res)
         id,
         name: req.body.name ? req.body.name : null,
         description: req.body.description ? req.body.description : null,
-        mdb_id: req.body.mdb_id ? req.body.mdb_id : null
+        mdbId: req.body.mdbId ? req.body.mdbId : null
     }
 
     try

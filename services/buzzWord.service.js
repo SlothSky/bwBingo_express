@@ -37,7 +37,7 @@ exports.createBuzzWord= async function(buzzWord)
     let newBuzzword = new BuzzWord({
         name: buzzWord.name,
         description: buzzWord.description,
-        mdb_id: buzzWord.mdb_id,
+        mdbId: buzzWord.mdbId,
     })
 
     try
@@ -73,7 +73,7 @@ exports.updateBuzzWord = async function(buzzWord)
 
     oldBuzzWord.name = buzzWord.name,
     oldBuzzWord.description = buzzWord.description,
-    oldBuzzWord.mdb_id = buzzWord.mdb_id
+    oldBuzzWord.mdbId = buzzWord.mdbId
 
     try
     {
