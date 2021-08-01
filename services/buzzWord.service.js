@@ -7,8 +7,6 @@ _this = this
 // Async function to get the To do List
 exports.getBuzzWord = async function(query, page, limit)
 {
-
-    // Options setup for the mongoose paginate
     let options = {
         page,
         limit
@@ -32,12 +30,12 @@ exports.getBuzzWord = async function(query, page, limit)
 
 exports.createBuzzWord= async function(buzzWord)
 {
-    
     // Creating a new Mongoose Object by using the new keyword
     let newBuzzword = new BuzzWord({
         name: buzzWord.name,
         description: buzzWord.description,
         mdbId: buzzWord.mdbId,
+        sourcePath: buzzWord.sourcePath
     })
 
     try
@@ -71,9 +69,10 @@ exports.updateBuzzWord = async function(buzzWord)
         return false;
     }
 
-    oldBuzzWord.name = buzzWord.name,
-    oldBuzzWord.description = buzzWord.description,
-    oldBuzzWord.mdbId = buzzWord.mdbId
+    oldBuzzWord.name = buzzWord.name;
+    oldBuzzWord.description = buzzWord.description;
+    oldBuzzWord.mdbId = buzzWord.mdbId;
+    oldBuzzWord.sourcePath = oldBuzzWord.sourcePath;
 
     try
     {
@@ -89,7 +88,6 @@ exports.updateBuzzWord = async function(buzzWord)
 
 exports.deleteBuzzWord = async function(id)
 {
-    
     try
     {
         let deleted = await BuzzWord.remove({_id: id})

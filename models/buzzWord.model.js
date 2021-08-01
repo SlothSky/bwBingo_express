@@ -6,6 +6,7 @@ let BuzzWordSchema = new mongoose.Schema({
     name: String,
     description: String,
     mdbId: Number,
+    sourcePath: String
 })
 
 BuzzWordSchema.plugin(mongoosePaginate)
