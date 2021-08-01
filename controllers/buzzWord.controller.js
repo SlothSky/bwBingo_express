@@ -17,7 +17,7 @@ exports.getBuzzWord = async function(req, res)
 
     let query = req.query ? req.query : {};
     let page = req.query.page ? req.query.page : 1;
-    let limit = req.query.limit ? req.query.limit : 10; 
+    let limit = req.query.limit ? req.query.limit : 50; 
 
     try
     {
