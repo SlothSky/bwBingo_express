@@ -11,6 +11,7 @@ _this = this
 
 exports.getBuzzWord = async function(req, res)
 {
+    console.log(req.query);
     let query = req.query ? req.query : {};
     let page = req.query.page ? req.query.page : 1;
     let limit = req.query.limit ? req.query.limit : 50; 

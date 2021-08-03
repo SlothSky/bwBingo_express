@@ -11,7 +11,7 @@ exports.getBuzzWord = async function(query, page, limit)
         page,
         limit
     }
-    
+
     // Try Catch the awaited promise to handle the error 
     try 
     {
