@@ -41,7 +41,8 @@ exports.createBuzzWord = async function(req, res)
     let buzzWord = {
         name: req.body.name,
         description: req.body.description,
-        mdbId: req.body.mdbId
+        mdbId: req.body.mdbId,
+        sourcePath: req.body.sourcePath
     }
 
     try
@@ -60,9 +61,6 @@ exports.createBuzzWord = async function(req, res)
 
 exports.updateTemplate = async function(req, res)
 {
-
-    // Id is necessary for the update
-
     if(!req.body._id)
     {
         return res.status(400).json({status: 400, message: "BuzzWord's ID is missing"})
@@ -75,7 +73,8 @@ exports.updateTemplate = async function(req, res)
         id,
         name: req.body.name ? req.body.name : null,
         description: req.body.description ? req.body.description : null,
-        mdbId: req.body.mdbId ? req.body.mdbId : null
+        mdbId: req.body.mdbId ? req.body.mdbId : null,
+        sourcePath: req.body.sourcePath ? req.body.sourcePath : null
     }
 
     try
@@ -92,7 +91,6 @@ exports.updateTemplate = async function(req, res)
 
 exports.removeBuzzWord = async function(req, res)
 {
-
     let id = req.params.id;
 
     try
